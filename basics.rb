@@ -2,7 +2,7 @@ require 'discordrb'
 
 CHANNEL_WHERE_SUGGESTIONS_ARE_VOTED_FOR = 577313497759612928
 CHANNEL_WHERE_SUGGESTIONS_ARE_SUBMITTED = 577308958830886922
-BOT = Discordrb::Bot.new(token: File.read('./token'))
+BOT = Discordrb::Bot.new(token: File.read('./token').chomp)
 BOT.message start_with: '+suggest' do |event|
     if event.channel.id == CHANNEL_WHERE_SUGGESTIONS_ARE_SUBMITTED
         suggestion = event.message.text.gsub(/^\+suggest /, '')
