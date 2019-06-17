@@ -13,3 +13,4 @@ BOT.message start_with: '+suggest' do |event|
         event.respond("Thanks for your suggestion!")
     end
 end
+BOT.run
