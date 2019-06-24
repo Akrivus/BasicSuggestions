@@ -13,4 +13,8 @@ BOT.message start_with: '+suggest' do |event|
         event.respond("Thanks for your suggestion!")
     end
 end
+BOT.message start_with: '+ping' do |event|
+    message = event.message.text.gsub(/^\+ping /, '')
+    event.respond(message.empty? ? 'Pong!' : message)
+end
 BOT.run
